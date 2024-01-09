@@ -6,7 +6,7 @@ to more efficiently calculate the modulo of very large exponents.
 
 While a built-in library already exists to do so, this small project was an opportunity for me to apply my Racket and algebra skills to 
 try and match the efficiency of (modular-expt) from (require math/number-theory).
-```
+```racket
 (define (modulo-simplifier base exponent divisor held)
   (local[(define (find-threshold base exponent divisor held)
            (cond[(> held divisor)(find-threshold base exponent divisor (modulo held divisor))]
