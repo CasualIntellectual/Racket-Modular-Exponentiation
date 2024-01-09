@@ -1,7 +1,7 @@
 # Racket Modular Exponentiation
 
 
-This was an exercise for me to write a program using properties of modulus (specifically congruence power and congruence multiply/divide)
+This was an self-imposed exercise to write a program using properties of modulus (specifically congruence power and congruence multiply/divide)
 to more efficiently calculate the modulo of very large exponents.
 
 While a built-in library already exists to do so, this small project was an opportunity for me to apply my Racket and algebra skills to 
