@@ -10,15 +10,15 @@ try and match the efficiency of (modular-expt) from (require math/number-theory)
 (define (modulo-simplifier base exponent divisor held)
   (local[(define (find-threshold base exponent divisor held)
            (cond[(> held divisor)(find-threshold base exponent divisor (modulo held divisor))]
-                [(= 1 exponent)(modulo (* held base) divisor)]
-                [(odd? exponent)(find-threshold base (sub1 exponent) divisor (* held base))]
+                [(= 1 exponent)(modulo (* held base) divisor)];congruence multiply
+                [(odd? exponent)(find-threshold base (sub1 exponent) divisor (* held base))];congruence divide
                 [(> base divisor)(modulo-simplifier base exponent divisor held)]
                 [(< base divisor)(find-threshold (sqr base)(/ exponent 2) divisor held)]))]
          
   (cond[(= base 1) 1]
        [(= base 0) 0];base cases
        [(> base divisor)
-        (modulo-simplifier (modulo base divisor) exponent divisor held)]
+        (modulo-simplifier (modulo base divisor) exponent divisor held)];congruence power
        [(< base divisor)
         (find-threshold base exponent divisor held)])))
 ```
