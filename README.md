@@ -14,7 +14,7 @@ try and match the efficiency of (modular-expt) from (require math/number-theory)
                 [(odd? exponent)(find-threshold base (sub1 exponent) divisor (* held base))];congruence divide
                 [(> base divisor)(modulo-simplifier base exponent divisor held)]
                 [(< base divisor)(find-threshold (sqr base)(/ exponent 2) divisor held)]))]
-         
+        ;;mutual recursion is used when the base is smaller that the divisor 
   (cond[(= base 1) 1]
        [(= base 0) 0];base cases
        [(> base divisor)
