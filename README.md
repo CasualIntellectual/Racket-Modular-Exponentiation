@@ -22,3 +22,6 @@ try and match the efficiency of (modular-expt) from (require math/number-theory)
        [(< base divisor)
         (find-threshold base exponent divisor held)])))
 ```
+![image](https://github.com/CasualIntellectual/Racket-Modular-Exponentiation/assets/137366044/525ee61a-44bd-4978-ba25-545edf791eaa)
+
+My program was sufficiently fast for all intents and purposes though I believe that I could work on efficiency and neatness some more.
